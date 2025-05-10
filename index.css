@@ -1,0 +1,20 @@
+.ul-box {
+  height: 70px;
+  background: gainsboro;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+.ul-box li {
+  text-decoration: none;
+  list-style: none;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.boxes-container {
+  display: flex;
+  align-items: center;
+  background-color: red;
+}

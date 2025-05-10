@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <body>
+    <div class="js-container"> </div>
+  
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+  
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+      function NavBar() {
+        return (
+          <>
+            <nav>
+              <ul className="ul-box">
+                <li>Home</li>
+                <li>Contact</li>
+                <li>About</li>
+                <li>Products</li>
+              </ul>
+            </nav>
+          </>
+        )
+      }
+
+      function Section(props) {
+        const divText = props.text;
+        return(
+          <>
+            <div className="boxes-container">
+              {divText}
+            </div>
+          </>
+        )
+      }
+      
+  
+      function App() {
+        return (
+          <div>
+            <NavBar />
+            <Section text= "This is the very first i will be adding"/>
+            <Section text= "In the begining was the word and the word was with God and the word was God."/>
+          </div>
+        )
+      }
+    const container = document.querySelector('.js-container');
+    ReactDOM.createRoot(container).render(<App />);
+  </script>
+</body>
+</html>
