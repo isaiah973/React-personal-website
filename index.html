@@ -16,6 +16,7 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
 
+
       function NavBar() {
         return (
           <>
@@ -30,26 +31,76 @@
           </>
         )
       }
-
+      
+      
       function Section(props) {
         const divText = props.text;
         return(
           <>
-            <div className="boxes-container">
+            <div>
               {divText}
             </div>
           </>
         )
       }
-      
-  
+
+      function UserGreeting (props) {
+       const welcomeMessage = <h1>Welcome {props.name}</h1>
+       const logInPrompt = <h2>please log in to continue</h2>
+       
+       return(props.isLoggedIn ? welcomeMessage : logInPrompt);
+      } 
+
+      function Counter() {
+        const [count, setCount] = React.useState(0);
+          const increament = () => {
+            setCount(count + 1);
+          };
+
+          const decreament = () => {
+            setCount(count - 1);
+          };
+
+        return (
+          <div>
+            <button onClick = {increament}>Increase</button>
+            <p>{count}</p>
+            <button onClick = {decreament}>Decrease</button>
+          </div>
+        )
+      }
+
+      function SaveInputText() {
+        const [inputText, setInputText] = React.useState("");
+        
+        function saveInput (event) {
+          setInputText(event.target.value);
+        }
+        
+        function showInput(){
+          console.log(inputText);
+        }
+        return (
+          <div>
+            <input onChange = {saveInput} type="text"></input>
+            <button onClick ={showInput}>Convert</button>
+            <p></p>
+          </div>
+        )
+      }
+
+
       function App() {
         return (
           <div>
             <NavBar />
             <Section text= "This is the very first i will be adding"/>
             <Section text= "In the begining was the word and the word was with God and the word was God."/>
-          </div>
+            <UserGreeting name= "adeola" isLoggedIn= {true}/>
+            <Counter />
+            <SaveInputText />
+
+            </div>
         )
       }
     const container = document.querySelector('.js-container');
